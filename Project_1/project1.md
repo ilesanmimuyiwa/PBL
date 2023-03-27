@@ -23,17 +23,17 @@ or
  curl http://127.0.0.1:80
  `
 
-![Apache2 Status](./curl.JPG)
+![curl page](./curl.JPG)
 
 #retrieve Public IP address from aws console
 
 `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
 
-![Apache2 Status](./meta%20from%20console.JPG)
+![aws metadata](./meta%20from%20console.JPG)
 
 #retrieve webpage from Public internet 
 
-![Apache2 Status](./webpage.JPG)
+![Web page](./webpage.JPG)
 
 ## Step 2 — Installing MYSQL
 
@@ -76,6 +76,8 @@ or
 
 `sudo vi /etc/apache2/sites-available/projectlamp.conf`
 
+![apache conf](./Images/projectlampconf.JPG)
+
 #use a2ensite command to enable the new virtual host
 
 `sudo a2ensite projectlamp`
@@ -92,12 +94,16 @@ or
 
 `sudo systemctl reload apache2`
 
-#Testing new website URL using IP address
+#Create new html and Test new website URL using IP address
 
-![Apache2 Status](./lamp-web.JPG)
+`sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html`
+
+![Lamp web](./lamp-web.JPG)
 
 ## STEP 5 — ENABLE PHP ON THE WEBSITE
 
-#Create a new file named index.php inside the custom web root folder
+#Create a new file named index.php inside the custom web root folder and add php code
 
 `vim /var/www/projectlamp/index.php`
+
+![php code](./Images/lamp%20php.JPG)
