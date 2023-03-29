@@ -12,9 +12,9 @@
 
 #verify node and npm installation above
 
-'node -v
+'node -v`
 
-npm -v`
+`npm -v`
 
 ![npv npm](./images/npm%20and%20npv.JPG)
 
@@ -38,15 +38,32 @@ mkdir Todo
 
 `npm install express`
 
-#create a file index.js
+#create a file index.js and add code
 
-`touch index.js`
+`const express = require('express');
+require('dotenv').config();
+
+const app = express();
+
+const port = process.env.PORT || 5000;
+
+app.use((req, res, next) => {
+res.header("Access-Control-Allow-Origin", "\*");
+res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+next();
+});
+
+app.use((req, res, next) => {
+res.send('Welcome to Express');
+});
+
+app.listen(port, () => {
+console.log(`Server running on port ${port}`)
+});`
 
 #Install the dotenv module
 
 `npm install dotenv`
-
-#Open the index.js file and put in some configs
 
 #start express.js server
 
@@ -80,9 +97,9 @@ mkdir Todo
 
 ![route-api update](./images/route%20directory-update.JPG)
 
-### MongoDB
+### MongoDB (cloud.mongodb.com)
 
-#create env variable specified in index.js
+#In Todo directory create env variable specified in index.js
 
 ![env](./images/env.JPG)
 
@@ -160,15 +177,15 @@ console.log(`Server running on port ${port}`)
 #configure proxy in react  in TODO > react > package.json
 #thi allows access to the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos
 
-![react proxy](./images/react%20json.JPG)
+![client proxy](./images/react%20json.JPG)
 
 #enable in TODO directory
 
 `npm run dev`
 
-#permit access to server on port 3000
+#permit access to server on port 5000
 
-#Creating React Components in TODO > client > src and create 3 files name (Input.js, ListTodo.js and Todo.js);
+#Creating React Components folder in TODO > client > src and create 3 files name (Input.js, ListTodo.js and Todo.js);
 
 ![component](./images/component.JPG)
 
@@ -222,7 +239,7 @@ return (
 export default Input
 `
 
-#Install axios in client directory
+#Install axios in client folder
 
 `npm install axios`
 
@@ -316,7 +333,7 @@ let { todos } = this.state;
 
 export default Todo;`
 
-#Create  App.js code in /home/ubuntu/Todo/client/src and upload code
+#Update App.js code in /home/ubuntu/Todo/client/src 
 
 `
 import React from 'react';
@@ -335,7 +352,7 @@ return (
 export default App;
 `
 
-#Create  App.css in /home/ubuntu/Todo/client/src and upload code
+#update App.css in /home/ubuntu/Todo/client/src 
 
 `.App {
 text-align: center;
@@ -425,7 +442,7 @@ margin-top: 0;
 }
 }`
 
-#Create  index.css in /home/ubuntu/Todo/client/src and upload code
+#update index.css in /home/ubuntu/Todo/client/src
 
 `body {
 margin: 0;
@@ -451,4 +468,4 @@ monospace;
 
 #test app
 
-could not test cos of server issue. Server cpu spikes when react is installed
+![App test](./images/app%20test.JPG)
