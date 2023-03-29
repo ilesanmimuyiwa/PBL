@@ -1,4 +1,4 @@
-# PROJECT 1: LEMP STACK IMPLEMENTATION
+# PROJECT 2: LEMP STACK IMPLEMENTATION
 
 ## Step 1 — installing nginx web server 
 
