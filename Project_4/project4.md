@@ -38,7 +38,7 @@
 
 #in the book folder add server.js and update code
 
-`var express = require('express');
+var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(express.static(__dirname + '/public'));
@@ -47,7 +47,7 @@ require('./apps/routes')(app);
 app.set('port', 3300);
 app.listen(app.get('port'), function() {
     console.log('Server up: http://localhost:' + app.get('port'));
-});`
+});
 
 ## Step 3: INSTALL EXPRESS AND SET UP ROUTES TO THE SERVER
 
@@ -61,7 +61,6 @@ app.listen(app.get('port'), function() {
 
 `vi routes.js`
 
-`
 var Book = require('./models/book');
 module.exports = function(app) {
   app.get('/book', function(req, res) {
@@ -98,7 +97,7 @@ module.exports = function(app) {
   app.get('*', function(req, res) {
     res.sendfile(path.join(__dirname + '/public', 'index.html'));
   });
-};`
+};
 
 #In 'Book folder' create 'models folder' > create file book.js and update code
 
@@ -106,7 +105,7 @@ module.exports = function(app) {
 
 `vi book.js`
 
-`var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var dbHost = 'mongodb://localhost:27017/test';
 mongoose.connect(dbHost);
 mongoose.connection;
@@ -118,13 +117,13 @@ var bookSchema = mongoose.Schema( {
   pages: Number
 });
 var Book = mongoose.model('Book', bookSchema);
-module.exports = mongoose.model('Book', bookSchema);`
+module.exports = mongoose.model('Book', bookSchema);
 
 ## Step 4: Access the routes with Angular JS
 
 #In books directory create a folder name 'public', add a file named script.js and update code
 
-`var app = angular.module('myApp', []);
+var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
   $http( {
     method: 'GET',
@@ -160,11 +159,11 @@ app.controller('myCtrl', function($scope, $http) {
       console.log('Error: ' + response);
     });
   };
-});`
+});
 
 #In public folder, create a file named index.html; and update code
 
-`<!doctype html>
+<!doctype html>
 <html ng-app="myApp" ng-controller="myCtrl">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -213,7 +212,7 @@ app.controller('myCtrl', function($scope, $http) {
       </table>
     </div>
   </body>
-</html>`
+</html>
 
 #Start the server in book folder
 

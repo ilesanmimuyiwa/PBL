@@ -14,7 +14,7 @@
 
 `sudo systemctl status apache2`
 
-![Apache2 Status](./apache2_status.JPG)
+![Apache2 Status](./Images/apache2_status.JPG)
 
 #how we can access it locally in our Ubuntu shell
 
@@ -23,17 +23,17 @@ or
  curl http://127.0.0.1:80
  `
 
-![curl page](./curl.JPG)
+![curl page](./Images/curl.JPG)
 
 #retrieve Public IP address from aws console
 
 `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
 
-![aws metadata](./meta%20from%20console.JPG)
+![aws metadata](./Images/meta%20from%20console.JPG)
 
 #retrieve webpage from Public internet 
 
-![Web page](./webpage.JPG)
+![Web page](./Images/webpage.JPG)
 
 ## Step 2 — Installing MYSQL
 
@@ -98,7 +98,7 @@ or
 
 `sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html`
 
-![Lamp web](./lamp-web.JPG)
+![Lamp web](./Images/lamp-web.JPG)
 
 ## STEP 5 — ENABLE PHP ON THE WEBSITE
 

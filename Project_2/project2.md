@@ -98,11 +98,11 @@ GRANT ALL ON example_database.* TO 'user1'@'%';`
 
 #create a test table named todo_list
 
-`CREATE TABLE example_database.todo_list (
+CREATE TABLE example_database.todo_list (
 mysql>     item_id INT AUTO_INCREMENT,
 mysql>     content VARCHAR(255),
 mysql>     PRIMARY KEY(item_id)
-mysql> );`
+mysql> );
 
 #Insert a few rows of content in the test table
 

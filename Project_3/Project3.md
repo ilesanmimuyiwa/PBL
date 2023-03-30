@@ -40,7 +40,7 @@ mkdir Todo
 
 #create a file index.js and add code
 
-`const express = require('express');
+const express = require('express');
 require('dotenv').config();
 
 const app = express();
@@ -59,7 +59,7 @@ res.send('Welcome to Express');
 
 app.listen(port, () => {
 console.log(`Server running on port ${port}`)
-});`
+});
 
 #Install the dotenv module
 
@@ -104,7 +104,8 @@ console.log(`Server running on port ${port}`)
 ![env](./images/env.JPG)
 
 #update index.js with env
-`const express = require('express');
+
+const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require('./routes/api');
@@ -140,7 +141,7 @@ next();
 
 app.listen(port, () => {
 console.log(`Server running on port ${port}`)
-});`
+});
 
 #test connection to mongodb
 
@@ -191,7 +192,6 @@ console.log(`Server running on port ${port}`)
 
 #update input.js
 
-`
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -237,7 +237,6 @@ return (
 }
 
 export default Input
-`
 
 #Install axios in client folder
 
@@ -247,7 +246,6 @@ export default Input
 
 #Update ListTodo.js code in /home/ubuntu/Todo/client/src/components
 
-`
 import React from 'react';
 
 const ListTodo = ({ todos, deleteTodo }) => {
@@ -273,11 +271,11 @@ return (
 )
 }
 
-export default ListTodo`
+export default ListTodo
 
 #Update Todo.js code in /home/ubuntu/Todo/client/src/components
 
-`import React, {Component} from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 
 import Input from './Input';
@@ -331,11 +329,10 @@ let { todos } = this.state;
 }
 }
 
-export default Todo;`
+export default Todo;
 
 #Update App.js code in /home/ubuntu/Todo/client/src 
 
-`
 import React from 'react';
 
 import Todo from './components/Todo';
@@ -350,11 +347,11 @@ return (
 }
 
 export default App;
-`
+
 
 #update App.css in /home/ubuntu/Todo/client/src 
 
-`.App {
+.App {
 text-align: center;
 font-size: calc(10px + 2vmin);
 width: 60%;
@@ -440,11 +437,11 @@ width: 30%;
 margin-left: 10px;
 margin-top: 0;
 }
-}`
+}
 
 #update index.css in /home/ubuntu/Todo/client/src
 
-`body {
+body {
 margin: 0;
 padding: 0;
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -460,7 +457,7 @@ color: #787a80;
 code {
 font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 monospace;
-}`
+}
 
 #enable app in the TODO directory
 
