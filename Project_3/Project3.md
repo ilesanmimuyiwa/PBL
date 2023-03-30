@@ -4,13 +4,13 @@
 
 ### Install node.js on server
 
-#Get location of Node.js software from Ubuntun repositories
+#### Get location of Node.js software from Ubuntun repositories
 
 `curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -`
 
 `sudo apt-get install -y nodejs`
 
-#verify node and npm installation above
+#### verify node and npm installation above
 
 'node -v`
 
@@ -18,9 +18,9 @@
 
 ![npv npm](./images/npm%20and%20npv.JPG)
 
-###Application Code Setup
+### Application Code Setup
 
-#Create a directory for the To-Do for our app
+#### Create a directory for the To-Do for our app
 
 mkdir Todo
 
@@ -34,7 +34,7 @@ mkdir Todo
 
 ### Install express.js into our To-Do app directory
 
-#install express.js 
+#### install express.js 
 
 `npm install express`
 
@@ -61,7 +61,7 @@ app.listen(port, () => {
 console.log(`Server running on port ${port}`)
 });
 
-#Install the dotenv module
+#### Install the dotenv module
 
 `npm install dotenv`
 
@@ -71,39 +71,39 @@ console.log(`Server running on port ${port}`)
 
 ![expressjs start](./images/expressjs%20start.JPG)
 
-#on aws security group permit tcp 5000 cos our server is running on port 5000
+#### on aws security group permit tcp 5000 cos our server is running on port 5000
 
-#confirm access to express web
+#### confirm access to express web
 
 ![expressjs web](./images/express%20web.JPG)
 
-#create route folder > api.js file inside our TODO folder, configure it to perform post, get, delete operation
+#### create route folder > api.js file inside our TODO folder, configure it to perform post, get, delete operation
 
 ![routes](./images/routes.JPG)
 
 ### Models
 
-#install mongoose which is a Node.js package that makes working with mongodb easier
+#### install mongoose which is a Node.js package that makes working with mongodb easier
 
 `npm install mongoose`
 
-#create models directory > todo.js file in out TODO list
+#### create models directory > todo.js file in out TODO list
 
 `mkdir models && cd models && touch todo.js` > paste configs
 
 ![model todojs](./images/model%20js%20config.JPG)
 
-#update our routes from the file api.js in ‘routes’ directory to make use of the new model.
+#### update our routes from the file api.js in ‘routes’ directory to make use of the new model.
 
 ![route-api update](./images/route%20directory-update.JPG)
 
 ### MongoDB (cloud.mongodb.com)
 
-#In Todo directory create env variable specified in index.js
+#### In Todo directory create env variable specified in index.js
 
 ![env](./images/env.JPG)
 
-#update index.js with env
+#### update index.js with env
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -147,50 +147,50 @@ console.log(`Server running on port ${port}`)
 
 ![mongodb connect](./images/mongodb%20connect.JPG)
 
-#Postman Post
+#### Postman Post
 
 ![Postman Post](./images/postman%20post.JPG)
 
-#Postman Get
+#### Postman Get
 
 ![Postman Get](./images/postman%20get.JPG)
 
 ## Step 2 — Front End creation
 
-#scaffold our app in TODO folder (install react)
+### scaffold our app in TODO folder (install react)
 
 `npx create-react-app client`
 
-#This will create a new folder in Todo directory called client, where we will add all the react code.
+### This will create a new folder in Todo directory called client, where we will add all the react code.
 
 ![React Client](./images/react%20client.JPG)
 
-#Install react dependencies (concurrently (allows to run more than one command simultaneously from the same terminal window.) and nodemon)
+### Install react dependencies (concurrently (allows to run more than one command simultaneously from the same terminal window.) and nodemon)
 
 `npm install concurrently --save-dev`
 
 `npm install nodemon --save-dev`
 
-#update script for node.js in TODO > package.json file in TODO
+### update script for node.js in TODO > package.json file in TODO
 
 ![script node.js](./images/sript%20package.JPG)
 
-#configure proxy in react  in TODO > react > package.json
+### configure proxy in react  in TODO > react > package.json
 #thi allows access to the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos
 
 ![client proxy](./images/react%20json.JPG)
 
-#enable in TODO directory
+### enable in TODO directory
 
 `npm run dev`
 
-#permit access to server on port 5000
+### permit access to server on port 5000
 
-#Creating React Components folder in TODO > client > src and create 3 files name (Input.js, ListTodo.js and Todo.js);
+### Creating React Components folder in TODO > client > src and create 3 files name (Input.js, ListTodo.js and Todo.js);
 
 ![component](./images/component.JPG)
 
-#update input.js
+### update input.js
 
 import React, { Component } from 'react';
 import axios from 'axios';
@@ -238,7 +238,7 @@ return (
 
 export default Input
 
-#Install axios in client folder
+### Install axios in client folder
 
 `npm install axios`
 
@@ -331,7 +331,7 @@ let { todos } = this.state;
 
 export default Todo;
 
-#Update App.js code in /home/ubuntu/Todo/client/src 
+### Update App.js code in /home/ubuntu/Todo/client/src 
 
 import React from 'react';
 
@@ -439,7 +439,7 @@ margin-top: 0;
 }
 }
 
-#update index.css in /home/ubuntu/Todo/client/src
+### update index.css in /home/ubuntu/Todo/client/src
 
 body {
 margin: 0;
@@ -459,10 +459,10 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 monospace;
 }
 
-#enable app in the TODO directory
+### enable app in the TODO directory
 
 `npm run dev`
 
-#test app
+### test app
 
 ![App test](./images/app%20test.JPG)

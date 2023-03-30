@@ -22,11 +22,11 @@
 
 `sudo service mongodb start`
 
-#Mongodb status
+### Mongodb status
 
 ![Mongodb status](./images/mongodb%20status.JPG)
 
-#install body paser package
+### install body paser package
 
 `sudo npm install body-parser`
 
@@ -36,7 +36,7 @@
 
 `npm init`
 
-#in the book folder add server.js and update code
+### in the book folder add server.js and update code
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -55,7 +55,7 @@ app.listen(app.get('port'), function() {
 
 `sudo npm install express mongoose`
 
-#In ‘Books’ folder, create a folder named apps > Create a file named routes.js and update code
+### In ‘Books’ folder, create a folder named apps > Create a file named routes.js and update code
 
 `mkdir apps && cd apps`
 
@@ -99,7 +99,7 @@ module.exports = function(app) {
   });
 };
 
-#In 'Book folder' create 'models folder' > create file book.js and update code
+### In 'Book folder' create 'models folder' > create file book.js and update code
 
 `mkdir models && cd models`
 
@@ -121,7 +121,7 @@ module.exports = mongoose.model('Book', bookSchema);
 
 ## Step 4: Access the routes with Angular JS
 
-#In books directory create a folder name 'public', add a file named script.js and update code
+### In books directory create a folder name 'public', add a file named script.js and update code
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
@@ -161,7 +161,7 @@ app.controller('myCtrl', function($scope, $http) {
   };
 });
 
-#In public folder, create a file named index.html; and update code
+### In public folder, create a file named index.html; and update code
 
 <!doctype html>
 <html ng-app="myApp" ng-controller="myCtrl">
@@ -214,10 +214,10 @@ app.controller('myCtrl', function($scope, $http) {
   </body>
 </html>
 
-#Start the server in book folder
+### Start the server in book folder
 
 `node server.js`
 
-#Access bookapp
+### Access bookapp
 
 ![Access Bookapp](./images/access%20bookapp.JPG)
