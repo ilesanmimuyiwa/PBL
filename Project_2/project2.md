@@ -52,7 +52,7 @@ Same as in Project-1
 
 ### Confirm nginx link
 
-sudo nginx -t
+`sudo nginx -t`
 
 ![nginx link](./images/nginx%20link.JPG)
 
@@ -84,8 +84,8 @@ sudo systemctl reload nginx
 ## STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP
 
 ### create a database named example_database
-`sudo mysql
-mysql> CREATE DATABASE `example_database`;`
+`sudo mysql`
+`mysql> CREATE DATABASE `example_database`;`
 
 ### can create a new user and grant full privileges on the database
 
@@ -98,11 +98,11 @@ GRANT ALL ON example_database.* TO 'user1'@'%';`
 
 #create a test table named todo_list
 
-CREATE TABLE example_database.todo_list (
-mysql>     item_id INT AUTO_INCREMENT,
-mysql>     content VARCHAR(255),
-mysql>     PRIMARY KEY(item_id)
-mysql> );
+>CREATE TABLE example_database.todo_list (
+>mysql>     item_id INT AUTO_INCREMENT,
+>mysql>     content VARCHAR(255),
+>mysql>     PRIMARY KEY(item_id)
+>mysql> );
 
 ### Insert a few rows of content in the test table
 

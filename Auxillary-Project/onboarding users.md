@@ -1,7 +1,9 @@
 # AUX PROJECT 1: SHELL SCRIPTING
 
+>#!/bin/bash
+
 >input="/home/ubuntu/shell/names.csv"
->
+
 >while IFS= read -r line
 
 >do
