@@ -87,10 +87,10 @@ sudo systemctl reload nginx
 `sudo mysql`
 `mysql> CREATE DATABASE `example_database`;`
 
-### can create a new user and grant full privileges on the database
+### create a new user and grant full privileges on the database
 
-`CREATE USER 'user1'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.2';
-GRANT ALL ON example_database.* TO 'user1'@'%';`
+`CREATE USER 'user1'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.2';`
+`GRANT ALL ON example_database.* TO 'user1'@'%';`
 
 ### test if the new user has the proper permissions by logging in to the MySQL
 
