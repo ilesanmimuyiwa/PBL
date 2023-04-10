@@ -149,7 +149,7 @@
 ### Configure DB to work with WordPress
 `sudo mysql`
 `CREATE DATABASE wordpress;`
-`CREATE USER `myuser`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'mypass';`
+`CREATE USER 'myuser'@'<Web-Server-Private-IP-Address>' IDENTIFIED BY 'mypass';`
 `GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';`
 `FLUSH PRIVILEGES;`
 `SHOW DATABASES;`
